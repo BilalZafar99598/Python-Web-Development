@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os
+# import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'dwt!dww#jiysca)us#0gctgv+++@ubx&o2vifdm=0ax=yto*q9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','eshopsystem.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,14 +42,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'store.middlewares.auth.auth_middleware'
+    'store.middlewares.auth.auth_middleware'
 ]
 
 ROOT_URLCONF = 'Eshop.urls'
@@ -127,4 +126,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/products/download/images/product/'
 MEDIA_ROOT = BASE_DIR
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
